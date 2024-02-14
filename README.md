@@ -1,2 +1,2 @@
 # Примеры автоматизированных тестов на связке 
-# selenium web driver + java
+selenium web driver + java
