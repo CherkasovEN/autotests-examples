@@ -20,10 +20,10 @@ public class initDriver {
         countWait = 3;
         WebDriverManager.chromedriver().setup(); // почитать
         System.setProperty("webdriver.chrome.whitelistedIps", ""); // почитать
-        ChromeOptions options=new ChromeOptions(); // это опции командной строки, полный список можно посмотреть здесь - https://peter.sh/experiments/chromium-command-line-switches/  урок 23-24
+        ChromeOptions options=new ChromeOptions(); // опции командной строки
         options.setHeadless(true); // true - безоконный режим браузера, false - оконный режим браузера
-        options.addArguments("--disable-dev-shm-usage"); // почитать
-        options.addArguments("--no-sandbox"); // почитать
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox"); 
         driver = new ChromeDriver(options);
 //        wait = new WebDriverWait(driver, 2);
         driver.manage().window().maximize();
