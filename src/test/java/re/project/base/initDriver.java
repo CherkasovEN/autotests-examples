@@ -20,7 +20,7 @@ public class initDriver {
         countWait = 3;
         WebDriverManager.chromedriver().setup(); // почитать
         System.setProperty("webdriver.chrome.whitelistedIps", ""); // почитать
-        ChromeOptions options=new ChromeOptions(); // это опции командной строки, полный список можно посмотреть здеся - https://peter.sh/experiments/chromium-command-line-switches/  урок 23-24
+        ChromeOptions options=new ChromeOptions(); // это опции командной строки, полный список можно посмотреть здесь - https://peter.sh/experiments/chromium-command-line-switches/  урок 23-24
         options.setHeadless(true); // true - безоконный режим браузера, false - оконный режим браузера
         options.addArguments("--disable-dev-shm-usage"); // почитать
         options.addArguments("--no-sandbox"); // почитать
@@ -30,17 +30,17 @@ public class initDriver {
         driver.manage().timeouts().implicitlyWait(countWait, TimeUnit.SECONDS); // неявное ожидание
         // этот метод достаточно вызывать один раз при инициализации драйвера
         // так как этот метод дает задержку для появления элемента, то есть он ждет его появление
-        // короче можно вызвать его тут один раз, что бы не вызывать в каждом тест-кейсе
+        // вызвать его тут один раз, что бы не вызывать в каждом тест-кейсе
         return (driver);
     }
     public void basicLogin(WebDriver driver)
     {
-        driver.get("http://test-msmz-app-n1.expertek.local/ui-v3/");        //переход на сайт
+        driver.get("http://test.local/ui-v3/"); //переход на сайт
         String inputUserName = "admin";
-        String inputUserPass = "1";
-        WebElement userName = driver.findElement(By.id("basic_username"));  //находим поле логина
+        String inputUserPass = "admin";
+        WebElement userName = driver.findElement(By.id("basic_username")); //находим поле логина
         userName.sendKeys(inputUserName); //вводим логин
-        WebElement userPass = driver.findElement(By.id("basic_password"));  //находим поле пароля
+        WebElement userPass = driver.findElement(By.id("basic_password")); //находим поле пароля
         userPass.sendKeys(inputUserPass); //вводим пароль
         driver.findElement(By.cssSelector("button.ant-btn.ant-btn-primary.ant-btn-block")).click(); //нажимаем кнопку войти
     }
@@ -57,16 +57,6 @@ public class initDriver {
     {
         return driver.findElements(locator).size() > 0;
     }
-    /*
-    метод для проверки отсутствия элемента, в случае если элемента нет на странице, вернет true
-    перед поиском выключаем неявное ожидание,
-    проводим поиск и после обратно включаем неявное ожидание
-
-    если элемент не найден, то размер массива найденных элементов будет равен 0
-
-    используем именно метод findElements, а не findElement
-    так как если искать только один элемент, то при его отсутствии будет выброшено исключение
-     */
     public boolean isElementNotPresent(WebDriver driver, By locator)
     {
         try {

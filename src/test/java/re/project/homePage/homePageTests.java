@@ -24,7 +24,7 @@ public class homePageTests extends initDriver {
     {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         String logoName = driver.findElement(By.xpath("//*[contains(@class, 'css-17fvs52')]")).getText();
-        assertEquals("МСМЗ", logoName);
+        assertEquals("ТЕСТ", logoName);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class homePageTests extends initDriver {
     {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         String logoName = driver.findElement(By.xpath("//*[contains(@class, 'css-1e185z1')]")).getText();
-        assertEquals("ArmAzkPage [АРМ АЗК]", logoName);
+        assertEquals("АвтоматическоеРабочееМесто", logoName);
     }
 
     @After

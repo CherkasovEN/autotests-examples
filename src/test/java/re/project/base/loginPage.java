@@ -23,32 +23,18 @@ public class loginPage extends initDriver {
     public void driverQuit()
     {
         driver.quit();
-        driver = null; // прогуглить надо ли это делать?
+        driver = null;
     }
     @Test
-    @Owner("Vinnik VS")
-    public void loginTest()
+    @Owner("Cherkasov EN")
+    public void loginTest() //проверка авторизации
     {
-        driver.get("http://test-msmz-app-n1.expertek.local/ui-v3/");        //переход на сайт
+        driver.get("http://test.local/ui-v3/"); //переход на сайт
         String inputUserName = "admin";
-        String inputUserPass = "1";
-        WebElement userName = driver.findElement(By.id("basic_username"));  //находим поле логина
+        String inputUserPass = "admin";
+        WebElement userName = driver.findElement(By.id("basic_username")); //находим поле логина
         userName.sendKeys(inputUserName); //вводим логин
-        WebElement userPass = driver.findElement(By.id("basic_password"));  //находим поле пароля
-        userPass.sendKeys(inputUserPass); //вводим пароль
-        driver.findElement(By.cssSelector("button.ant-btn.ant-btn-primary.ant-btn-block")).click(); //нажимаем кнопку войти
-    }
-
-    @Test
-    @Owner("Vinnik VS")
-    public void loginTest2()
-    {
-        driver.get("http://test-msmz-app-n1.expertek.local/ui-v3/");        //переход на сайт
-        String inputUserName = "admin";
-        String inputUserPass = "2";
-        WebElement userName = driver.findElement(By.id("basic_username"));  //находим поле логина
-        userName.sendKeys(inputUserName); //вводим логин
-        WebElement userPass = driver.findElement(By.id("basic_password"));  //находим поле пароля
+        WebElement userPass = driver.findElement(By.id("basic_password")); //находим поле пароля
         userPass.sendKeys(inputUserPass); //вводим пароль
         driver.findElement(By.cssSelector("button.ant-btn.ant-btn-primary.ant-btn-block")).click(); //нажимаем кнопку войти
     }
