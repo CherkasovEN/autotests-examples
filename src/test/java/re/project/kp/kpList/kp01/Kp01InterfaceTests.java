@@ -50,7 +50,7 @@ public class Kp01InterfaceTests extends initDriver {
         driver.quit();
         driver = null; // прогуглить надо ли это делать?
     }
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     @Test
     public void T_511_checkAzkListField()
     {
@@ -58,7 +58,7 @@ public class Kp01InterfaceTests extends initDriver {
         assertEquals("Список АЗК", fieldName);
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_722_tooltips_AZK_not_in_SPECA()
     {
         // в спеке нет описания какой должен быть текст у всплывающей подсказки
@@ -80,7 +80,7 @@ public class Kp01InterfaceTests extends initDriver {
         assertEquals("Список АЗ участвующий в расчетах", azkTooltipsText);//сравнение текста с всплывающей подсказки с образцом
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_869_913_915_checkParameter1_2_3_unit()
     {
         List <WebElement> unitAllParameter = driver.findElements(By.cssSelector(".ant-input-suffix")); // сохраняем массив всех найденных единиц измерения
@@ -95,7 +95,7 @@ public class Kp01InterfaceTests extends initDriver {
         }
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_95_breadcrumb_check()
     {
         List<WebElement> breadcrumbs_elements = driver.findElements(By.xpath("//ol/li"));
@@ -113,7 +113,7 @@ public class Kp01InterfaceTests extends initDriver {
         }
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_866_Parameter_1_tooltips_not_in_SPECA()
     {
         Actions action = new Actions (driver);
@@ -125,7 +125,7 @@ public class Kp01InterfaceTests extends initDriver {
         assertEquals("Пороговая величина дебаланса по отдельной операции поступления НП в % к массе приходного документа", parameter4TooltipsText);//сравнение текста с всплывающей подсказки с образцом
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_914_Parameter_2_tooltips_not_in_SPECA()
     {
         Actions action = new Actions (driver);

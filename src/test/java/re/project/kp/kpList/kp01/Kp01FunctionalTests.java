@@ -72,7 +72,7 @@ public class Kp01FunctionalTests extends initDriver {
         driver = null; // прогуглить надо ли это делать?
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_895_Parameter_2_CheckInputSpecialCharacter()
     {
         String specialCharacte;
@@ -94,7 +94,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("33", numberInputText); // сравниваем полученное значение value с введенными цифрами
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_890_Parameter_2_CheckInputLatinSymbols() {
         String cyrillicInputText;
         // отправляем одно слово
@@ -114,7 +114,7 @@ public class Kp01FunctionalTests extends initDriver {
         String numberInputText =  driver.findElement(By.cssSelector("input[id='sumOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры ввелись, то значение value будет равно отправленному значению
         assertEquals("33", numberInputText); // сравниваем полученное значение value с введенными цифрами
     }
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     @Test
     public void T_896_Parameter_2_CheckMathematicalOperationInTheParameterField()
     {
@@ -125,7 +125,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("225", number); // сравниваем полученное значение
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_892_Parameter_2_CheckInputNumberWithComma() {
         String numberWithComma;
         // отправляем ,
@@ -148,7 +148,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("6", numberWithComma); // сравниваем полученное значение
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_891_Parameter_2_CheckInputNumberWithDot() {
         String numberWithPoint;
         // отправляем .
@@ -168,7 +168,7 @@ public class Kp01FunctionalTests extends initDriver {
         clearInputField(driver.findElement(By.cssSelector("input[id='sumOperationUnbalanceThreshold']"))); // очищаем введенные символы
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_889_Parameter_2_CheckInputCyrillicSymbols()
     {
         String cyrillicInputText;
@@ -189,126 +189,8 @@ public class Kp01FunctionalTests extends initDriver {
         String numberInputText =  driver.findElement(By.cssSelector("input[id='sumOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры ввелись, то значение value будет равно отправленному значению
         assertEquals("33", numberInputText); // сравниваем полученное значение value с введенными цифрами
     }
-    @Owner("Vinnik VS")
     @Test
-    public void T_884_Parameter_1_CheckMathematicalOperationInTheParameterField()
-    {
-        String number;
-        // отправляем "22 + 5"
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("22 + 5"); // находим поле ввода второго параметра и отправляем в него "22 + 5"
-        number =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value
-        assertEquals("225", number); // сравниваем полученное значение
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_883_Parameter_1_CheckInputSpecialCharacter()
-    {
-        String specialCharacte;
-        // отправляем %
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("%"); // находим поле ввода второго параметра и отправляем в него спец символы
-        specialCharacte =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если спец символы не ввелись, то значение value будет пустым
-        assertEquals("", specialCharacte); // сравниваем полученное значение value с пустотой
-        // отправляем ?
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("?"); // находим поле ввода второго параметра и отправляем в него спец символы
-        specialCharacte =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если спец символы не ввелись, то значение value будет пустым
-        assertEquals("", specialCharacte); // сравниваем полученное значение value с пустотой
-        // отправляем @
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("@"); // находим поле ввода второго параметра и отправляем в него спец символы
-        specialCharacte =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если спец символы не ввелись, то значение value будет пустым
-        assertEquals("", specialCharacte); // сравниваем полученное значение value с пустотой
-        // для проверки попробуем отправить в поле ввода цифры
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("33"); // находим поле ввода второго параметра и отправляем в него цифры
-        String numberInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры ввелись, то значение value будет равно отправленному значению
-        assertEquals("33", numberInputText); // сравниваем полученное значение value с введенными цифрами
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_882_Parameter_1_CheckInputLatinSymbols() {
-        String cyrillicInputText;
-        // отправляем одно слово
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("test"); // находим поле ввода параметра и отправляем в него латинские символы
-        cyrillicInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если латинские символы не ввелись, то значение value будет пустым
-        assertEquals("", cyrillicInputText); // сравниваем полученное значение value с пустотой
-        // отправляем слово с Заглавной буквой
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("test Check"); // находим поле ввода параметра и отправляем в него латинские символы
-        cyrillicInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если латинские символы не ввелись, то значение value будет пустым
-        assertEquals("", cyrillicInputText); // сравниваем полученное значение value с пустотой
-        // отправляем одну заглавную букву
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("Q"); // находим поле ввода параметра и отправляем в него латинские символы
-        cyrillicInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если латинские символы не ввелись, то значение value будет пустым
-        assertEquals("", cyrillicInputText); // сравниваем полученное значение value с пустотой
-        // для проверки попробуем отправить в поле ввода цифры
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("33"); // находим поле ввода параметра и отправляем в него цифры
-        String numberInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры ввелись, то значение value будет равно отправленному значению
-        assertEquals("33", numberInputText); // сравниваем полученное значение value с введенными цифрами
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_881_Parameter_1_CheckInputCyrillicSymbols()
-    {
-        String cyrillicInputText;
-        // отправляем два слова
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("тест проверка"); // находим поле ввода второго параметра и отправляем в него кириллические символы
-        cyrillicInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если кириллические символы не ввелись, то значение value будет пустым
-        assertEquals("", cyrillicInputText); // сравниваем полученное значение value с пустотой
-        // отправляем слово с Заглавной буквой
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("тест Проверка"); // находим поле ввода второго параметра и отправляем в него кириллические символы
-        cyrillicInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если кириллические символы не ввелись, то значение value будет пустым
-        assertEquals("", cyrillicInputText); // сравниваем полученное значение value с пустотой
-        // отправляем одну заглавную букву
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("Л"); // находим поле ввода второго параметра и отправляем в него кириллические символы
-        cyrillicInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если кириллические символы не ввелись, то значение value будет пустым
-        assertEquals("", cyrillicInputText); // сравниваем полученное значение value с пустотой
-        // для проверки попробуем отправить в поле ввода цифры
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("33"); // находим поле ввода второго параметра и отправляем в него цифры
-        String numberInputText =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры ввелись, то значение value будет равно отправленному значению
-        assertEquals("33", numberInputText); // сравниваем полученное значение value с введенными цифрами
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_872_Parameter_1_CheckInputNumberWithComma() {
-        String numberWithComma;
-        // отправляем ,
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys(","); // находим поле ввода второго параметра и отправляем в него цифры с запятой
-        numberWithComma =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры с запятой не ввелись, то значение value будет пустым, либо если ввелись только цифры
-        assertEquals("", numberWithComma); // сравниваем полученное значение value с пустотой
-        // отправляем ,3
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys(",3"); // находим поле ввода второго параметра и отправляем в него цифры с запятой
-        numberWithComma =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры с запятой не ввелись, то значение value будет пустым, либо если ввелись только цифры
-        assertEquals("3", numberWithComma); // сравниваем полученное значение
-        clearInputField(driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']"))); // очищаем введенные символы
-        // отправляем 4,5
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("4,567"); // находим поле ввода второго параметра и отправляем в него цифры с запятой
-        numberWithComma =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры с запятой не ввелись, то значение value будет пустым, либо если ввелись только цифры
-        assertEquals("4567", numberWithComma); // сравниваем полученное значение
-        clearInputField(driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']"))); // очищаем введенные символы
-        // отправляем 6,
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("6,"); // находим поле ввода второго параметра и отправляем в него цифры с запятой
-        numberWithComma =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если цифры с запятой не ввелись, то значение value будет пустым, либо если ввелись только цифры
-        assertEquals("6", numberWithComma); // сравниваем полученное значение
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_871_Parameter_1_CheckInputNumberWithDot() {
-        String numberWithPoint;
-        // отправляем .
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("."); // находим поле ввода второго параметра и отправляем в него точку
-        numberWithPoint =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если точка не ввелась, то значение value будет пустым
-        assertEquals(".", numberWithPoint); // сравниваем полученное значение
-        clearInputField(driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']"))); // очищаем введенные символы
-        // отправляем ..
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys(".."); // находим поле ввода второго параметра и отправляем в него две точки
-        numberWithPoint =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value, если две точки не ввелись, то значение value будет с одной точной
-        assertEquals(".", numberWithPoint); // сравниваем полученное значение
-        clearInputField(driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']"))); // очищаем введенные символы
-        // отправляем 6.84
-        driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).sendKeys("6.84"); // находим поле ввода второго параметра и отправляем в него 6.84
-        numberWithPoint =  driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']")).getAttribute("value"); // получаем значение атрибуту value
-        assertEquals("6.84", numberWithPoint); // сравниваем полученное значение
-        clearInputField(driver.findElement(By.cssSelector("input[id='singleOperationUnbalanceThreshold']"))); // очищаем введенные символы
-    }
-    @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_606_CheckIfTheSelectedValuesInTheFilterFieldAreReset_FUEL() {
         String GroupNP;
         String BenzinFirst;
@@ -348,7 +230,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("false", BenzinFirst);
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_599_CheckChoiceOneTypeFuelByClickingOnMarkNP()
     {
         String GroupNP;
@@ -378,7 +260,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("Бензины АИ-95-К5", inputFieldText);
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_723_CheckTheSelectionAllTMBrandsByClickingOnTMGroupWhenOneTMBrandIsSelected()
     {
         String GroupNP;
@@ -428,7 +310,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("Бензины", inputFieldText);
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_721_CheckChoiceAllMarkNPByClickingOnMarkNP()
     {
         String GroupNP;
@@ -469,7 +351,7 @@ public class Kp01FunctionalTests extends initDriver {
         }
         assertEquals("Бензины", inputFieldText);
     }
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     @Test
     public void T_597_Fuel_CheckInputTextInTheField()
     {
@@ -480,7 +362,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("тест", text);
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_604_Fuel_CheckSelectedAllMarkNPBySelectGroupNP() {
         String GroupNP;
         String BenzinFirst;
@@ -517,105 +399,8 @@ public class Kp01FunctionalTests extends initDriver {
         }
         assertEquals("Бензины", inputFieldText);
     }
-    @Owner("Vinnik VS")
     @Test
-    public void T_747_AZKList_CheckInputTextInTheField()
-    {
-        String text;
-        // отправляем слово "тест"
-        driver.findElement(By.xpath("//*[contains(text(), 'Список А')]")).sendKeys("тест");
-        text = driver.findElement(By.xpath("//*[contains(text(), 'Список А')]")).getAttribute("innerText");
-        assertEquals("тест", text);
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_748_AZKList_CheckSelectAllFillingStationTanksBySelectingTanks()
-    {
-        driver.findElement(By.xpath("//div[1]/div[2]/div/div/div/div[contains(@class,'ant-select-selector')]")).click(); // нажимаем на поле ввода список АЗК открывается выпадающий список
-        driver.findElement(By.xpath("//*[contains(text(),'Регион 1-1')]")).click(); // открываем АЗС
-        driver.findElement(By.xpath("//*[contains(text(),'АЗС 1-1-1-1')]")).click(); // открываем резервуары
-        driver.findElement(By.xpath("//*[contains(text(),'Резервуар 1-1-1-1-1')]")).click(); // кликаем на резервуар
-        driver.findElement(By.xpath("//*[contains(text(),'Резервуар 1-1-1-1-2')]")).click(); // кликаем на резервуар
-        // проверяем что отображается в поле ввода
-        // так как там массив из трех элементов то ищем по всем нужное и потом сравниваем
-        List<WebElement> inputAZKField = driver.findElements(By.xpath("//span[contains(@class, 'ant-select-selection-item')]/span[1]"));
-        String text = "";
-        for(int i = 0; i < inputAZKField.size(); i++)
-        {
-            text = inputAZKField.get(i).getAttribute("innerHTML");
-            if(text.equals("АЗС 1-1-1-1"))
-                break;
-        }
-        assertEquals("АЗС 1-1-1-1", text);
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_749_CheckSelectionAllTanksBySelectingAZS()
-    {
-        String checkBoxStatusFirst;
-        String checkBoxStatusSecond;
-        String checkBoxAZS;
-
-        driver.findElement(By.xpath("//div[1]/div[2]/div/div/div/div[contains(@class,'ant-select-selector')]")).click(); // нажимаем на поле ввода список АЗК открывается выпадающий список
-        driver.findElement(By.xpath("//*[contains(text(),'Регион 1-1')]")).click(); // открываем АЗС
-        driver.findElement(By.xpath("//*[contains(text(),'АЗС 1-1-1-1')]")).click(); // открываем резервуары
-
-        // проверяем что изначально чек боксы резервуаров деактивированы
-        checkBoxAZS = driver.findElement(By.xpath("//li[contains(@title, 'АЗС 1-1-1-1')]")).getAttribute("aria-checked");
-        checkBoxStatusFirst = driver.findElement(By.xpath("//li[contains(@title, 'Резервуар 1-1-1-1-1')]")).getAttribute("aria-checked");
-        checkBoxStatusSecond = driver.findElement(By.xpath("//li[contains(@title, 'Резервуар 1-1-1-1-2')]")).getAttribute("aria-checked");
-        assertEquals("false", checkBoxStatusFirst);
-        assertEquals("false", checkBoxStatusSecond);
-        assertEquals("false", checkBoxAZS);
-
-        driver.findElement(By.xpath("//li[contains(@title, 'АЗС 1-1-1-1')]/span/span")).click(); // нажимаем на чек бокс АЗС
-
-        // проверяем что чек боксы АЗС и резервуаров выбраны
-        checkBoxStatusFirst = driver.findElement(By.xpath("//li[contains(@title, 'Резервуар 1-1-1-1-1')]")).getAttribute("aria-checked");
-        checkBoxStatusSecond = driver.findElement(By.xpath("//li[contains(@title, 'Резервуар 1-1-1-1-2')]")).getAttribute("aria-checked");
-        checkBoxAZS = driver.findElement(By.xpath("//li[contains(@title, 'АЗС 1-1-1-1')]")).getAttribute("aria-checked");
-        assertEquals("true", checkBoxStatusFirst);
-        assertEquals("true", checkBoxStatusSecond);
-        assertEquals("true", checkBoxAZS);
-
-        // проверяем что отображается в поле ввода
-        // так как там массив из трех элементов то ищем по всем нужное и потом сравниваем
-        List<WebElement> inputAZKField = driver.findElements(By.xpath("//span[contains(@class, 'ant-select-selection-item')]/span[1]"));
-        String inputFieldText = "";
-        for(int i = 0; i < inputAZKField.size(); i++)
-        {
-            inputFieldText = inputAZKField.get(i).getAttribute("innerHTML");
-            if(inputFieldText.equals("АЗС 1-1-1-1"))
-                break;
-        }
-        assertEquals("АЗС 1-1-1-1", inputFieldText);
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_751_CheckSelectOneTank()
-    {
-        driver.findElement(By.xpath("//div[1]/div[2]/div/div/div/div[contains(@class,'ant-select-selector')]")).click(); // нажимаем на поле ввода список АЗК открывается выпадающий список
-        driver.findElement(By.xpath("//*[contains(text(),'Регион 1-1')]")).click(); // открываем АЗС
-        driver.findElement(By.xpath("//*[contains(text(),'АЗС 1-1-1-1')]")).click(); // открываем резервуары
-
-        driver.findElement(By.xpath("//*[contains(text(),'Резервуар 1-1-1-1-1')]")).click(); // кликаем на резервуар
-        String checkBoxStatusFirst = driver.findElement(By.xpath("//li[contains(@title, 'Резервуар 1-1-1-1-1')]")).getAttribute("aria-checked"); // берем значение чек бокса резервуара выбранного
-        assertEquals("true", checkBoxStatusFirst); // проверяем что он выбран
-
-        // проверяем что отображается в поле ввода
-        // так как там массив из трех элементов то ищем по всем нужное и потом сравниваем
-        List<WebElement> inputAZKField = driver.findElements(By.xpath("//span[contains(@class, 'ant-select-selection-item')]/span[1]"));
-        String inputFieldText = "";
-        for(int i = 0; i < inputAZKField.size(); i++)
-        {
-            inputFieldText = inputAZKField.get(i).getAttribute("innerHTML");
-            if(inputFieldText.equals("Резервуар 1-1-1-1-1"))
-                break;
-        }
-        assertEquals("Резервуар 1-1-1-1-1", inputFieldText);
-    }
-    @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_753_CheckIfTheSelectedValuesInTheFilterFieldAreReset_AZKList() {
         String checkBoxStatusFirst;
         String checkBoxStatusSecond;
@@ -711,7 +496,7 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("false", checkBoxAZSSecond);
     }
     @Test
-    @Owner("Vinnik VS")
+    @Owner("Cherkasov EN")
     public void T_780_DateRange_CheckFilterCleaningWithTheButtonInTheFilterInputField() {
         // делаем объект класса эктион, так как через методы хром драйвера в календарь отправляется не корректное значение при запуске в безоконном режиме
         Actions action = new Actions(driver);
@@ -746,101 +531,5 @@ public class Kp01FunctionalTests extends initDriver {
         assertEquals("", startDateValue);
         endDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
         assertEquals("", endDateValue);
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_763_DateRange_CheckChangeStartDate() {
-        // делаем объект класса эктион, так как через методы хром драйвера в календарь отправляется не корректное значение при запуске в безоконном режиме
-        Actions action = new Actions(driver);
-        /*
-        находим поле ввода Начальной даты и вводим в него значение
-        после чего проверяем что введенное значение отобразилось корректно
-         */
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Начальная дата']"))).click().sendKeys("2023-02-04").perform();
-        String startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-04", startDateValue);
-        /*
-        находим поле ввода конечной даты и вводим в него значение
-        после чего проверяем что введенное значение отобразилось корректно
-         */
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Конечная дата']"))).click().sendKeys("2023-02-10\n").perform(); // \n символ перевода на новую строку, в данном случае имитируем нажатие на энтер что бы зафиксировать введенное значение
-        String endDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("2023-02-10", endDateValue);
-        // перемещаемся и кликаем на другой элемент
-        WebElement AZKListField = driver.findElement(By.xpath("//*[contains(text(), 'Список А')]"));
-        action.moveToElement(AZKListField).click().perform();
-        // перемещаемся к начальной дате и проверяем что введенное значение сохранилось
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-04", startDateValue);
-        // перемещаемся к конечной дате и проверяем что введенное значение сохранилось
-        endDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("2023-02-10", endDateValue);
-        // устанавливаем другую начальную дату для этого сначала удаляем начальную дату и вводим новую а после еще проверяем что конечная дата осталась
-        clearInputField(driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")));
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("", startDateValue);
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Начальная дата']"))).click().sendKeys("2023-02-05").perform();
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-05", startDateValue);
-        endDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("2023-02-10", endDateValue);
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_766_DateRange_CheckChangeEndDate() {
-        // делаем объект класса эктион, так как через методы хром драйвера в календарь отправляется не корректное значение при запуске в безоконном режиме
-        Actions action = new Actions(driver);
-        /*
-        находим поле ввода Начальной даты и вводим в него значение
-        после чего проверяем что введенное значение отобразилось корректно
-         */
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Начальная дата']"))).click().sendKeys("2023-02-04").perform();
-        String startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-04", startDateValue);
-        /*
-        находим поле ввода конечной даты и вводим в него значение
-        после чего проверяем что введенное значение отобразилось корректно
-         */
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Конечная дата']"))).click().sendKeys("2023-02-10\n").perform(); // \n символ перевода на новую строку, в данном случае имитируем нажатие на энтер что бы зафиксировать введенное значение
-        String endDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("2023-02-10", endDateValue);
-        // перемещаемся и кликаем на другой элемент
-        WebElement AZKListField = driver.findElement(By.xpath("//*[contains(text(), 'Список А')]"));
-        action.moveToElement(AZKListField).click().perform();
-        // перемещаемся к начальной дате и проверяем что введенное значение сохранилось
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-04", startDateValue);
-        // перемещаемся к конечной дате и проверяем что введенное значение сохранилось
-        endDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("2023-02-10", endDateValue);
-        // устанавливаем другую конечную дату для этого сначала удаляем начальную дату и вводим новую а после еще проверяем что начальная дата осталась
-        clearInputField(driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")));
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("", startDateValue);
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Конечная дата']"))).click().sendKeys("2023-02-11").perform();
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Конечная дата']")).getAttribute("value");
-        assertEquals("2023-02-11", startDateValue);
-        endDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-04", endDateValue);
-    }
-    @Test
-    @Owner("Vinnik VS")
-    public void T_768_DateRange_CheckInputOnlyStartDate()
-    {
-        // делаем объект класса эктион, так как через методы хром драйвера в календарь отправляется не корректное значение при запуске в безоконном режиме
-        Actions action = new Actions(driver);
-        /*
-        находим поле ввода Начальной даты и вводим в него значение
-        после чего проверяем что введенное значение отобразилось корректно
-         */
-        action.moveToElement(driver.findElement(By.cssSelector("input[placeholder='Начальная дата']"))).click().sendKeys("2023-02-04").perform();
-        String startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("2023-02-04", startDateValue);
-        // перемещаемся и кликаем на другой элемент
-        WebElement AZKListField = driver.findElement(By.xpath("//*[contains(text(), 'Список А')]"));
-        action.moveToElement(AZKListField).click().perform();
-        // перемещаемся к конечной дате и проверяем что введенное значение удалилось
-        startDateValue = driver.findElement(By.cssSelector("input[placeholder='Начальная дата']")).getAttribute("value");
-        assertEquals("", startDateValue);
     }
 }
