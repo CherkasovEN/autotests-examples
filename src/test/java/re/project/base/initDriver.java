@@ -10,10 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
 
 public class initDriver {
-//    @Test
 
     protected static WebDriver driver;
-//    protected static WebDriverWait wait;
     Integer countWait;
 
     public WebDriver initializeDriver() throws InterruptedException {
@@ -25,7 +23,6 @@ public class initDriver {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox"); 
         driver = new ChromeDriver(options);
-//        wait = new WebDriverWait(driver, 2);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(countWait, TimeUnit.SECONDS); // неявное ожидание
         // этот метод достаточно вызывать один раз при инициализации драйвера
