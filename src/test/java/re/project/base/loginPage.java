@@ -17,7 +17,6 @@ public class loginPage extends initDriver {
     @Before
     public void initialize() throws InterruptedException {
         this.driver = initializeDriver();
-//        simpleLoginForTests(driver);
     }
     @After
     public void driverQuit()
